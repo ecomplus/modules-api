@@ -242,6 +242,7 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
                   })
                   // save transaction info on order data
                   saveTransaction(transaction, orderId, storeId)
+                  savePaymentHistory(transaction, orderId, storeId)
                   return
                 }
               }
