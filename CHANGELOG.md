@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.53](https://github.com/ecomplus/modules-api/compare/v0.12.52...v0.12.53) (2022-10-04)
+
+
+### Features
+
+* **checkout:** adding `currency_id` and `currency_symbol` optional fields to checkout params ([f6000db](https://github.com/ecomplus/modules-api/commit/f6000dbf80379c4fd639edfd89f4fe23cc3be006))
+* **list-payments:** add optional `installments_number` field in additional to `payment_method` ([c03303a](https://github.com/ecomplus/modules-api/commit/c03303aa613ff64580f788378b47f35b31433550))
+
 ### [0.12.52](https://github.com/ecomplus/modules-api/compare/v0.12.51...v0.12.52) (2022-07-28)
 
 
