@@ -226,7 +226,7 @@ const schema = {
         'discount': {
           'type': 'number',
           // 'multipleOf': 0.00001,
-          'minimum': -999999999,
+          'minimum': 0,
           'maximum': 9999999999,
           'description': 'Applied discount value'
         },
