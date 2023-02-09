@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.54](https://github.com/ecomplus/modules-api/compare/v0.12.53...v0.12.54) (2023-02-09)
+
+
+### Features
+
+* set `client_user_agent` on new order body ([9b28809](https://github.com/ecomplus/modules-api/commit/9b28809afa1c01da6eab4df185ac9f5f93bec6e0))
+
 ### [0.12.53](https://github.com/ecomplus/modules-api/compare/v0.12.52...v0.12.53) (2022-10-04)
 
 
