@@ -134,6 +134,7 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
         'utm',
         'affiliate_code',
         'browser_ip',
+        'client_user_agent',
         'channel_id',
         'channel_type',
         'domain',

@@ -58,9 +58,8 @@ function middleware (id, meta, body, respond, req, res, resource, verb, endpoint
       respond({}, null, 403, 121, 'Undefined or invalid Store ID')
       return
     }
-
     // pass to endpoint
-    endpoint(id, meta, body, respond, storeId, ip)
+    endpoint(id, meta, body, respond, storeId, ip, req.headers['user-agent'])
   } else {
     respond({}, null, 403, 100, 'Who are you? Unknown IP address')
   }

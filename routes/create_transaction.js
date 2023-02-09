@@ -609,6 +609,11 @@ const schema = {
       'maxLength': 50,
       'description': 'IP address of the browser used by the customer when placing the order'
     },
+    'client_user_agent': {
+      'type': 'string',
+      'maxLength': 255,
+      'description': 'User-Agent of the browser (if any) used by the customer'
+    },
     'channel_id': {
       'type': 'integer',
       'min': 10000,

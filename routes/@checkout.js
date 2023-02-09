@@ -853,6 +853,11 @@ const schema = {
       'maxLength': 50,
       'description': 'IP address of the browser used by the customer when placing the order'
     },
+    'client_user_agent': {
+      'type': 'string',
+      'maxLength': 255,
+      'description': 'User-Agent of the browser (if any) used by the customer'
+    },
     'channel_id': {
       'type': 'integer',
       'min': 10000,
@@ -1053,7 +1058,7 @@ const GET = (id, meta, body, respond) => {
   }
 }
 
-const POST = (id, meta, body, respond, storeId, ip) => {
+const POST = (id, meta, body, respond, storeId, ip, userAgent) => {
   // logger.log(JSON.stringify(body, null, 2))
   // ajv
   const valid = validate(body)
@@ -1062,9 +1067,8 @@ const POST = (id, meta, body, respond, storeId, ip) => {
   } else {
     // request body validated
     // handle checkout
-    if (!body.browser_ip && ip) {
-      body.browser_ip = ip
-    }
+    body.browser_ip = ip || body.browser_ip
+    body.client_user_agent = userAgent || body.client_user_agent
     checkout(body, respond, storeId)
   }
 }
