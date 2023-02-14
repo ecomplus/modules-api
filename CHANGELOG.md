@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.55](https://github.com/ecomplus/modules-api/compare/v0.12.54...v0.12.55) (2023-02-14)
+
+
+### Bug Fixes
+
+* **checkout:** limit `client_user_agent` from header to 255 chars ([676c784](https://github.com/ecomplus/modules-api/commit/676c784899fc2e8a0c519d586758abf4c69154eb))
+
 ### [0.12.54](https://github.com/ecomplus/modules-api/compare/v0.12.53...v0.12.54) (2023-02-09)
 
 
