@@ -1068,7 +1068,9 @@ const POST = (id, meta, body, respond, storeId, ip, userAgent) => {
     // request body validated
     // handle checkout
     body.browser_ip = ip || body.browser_ip
-    body.client_user_agent = userAgent || body.client_user_agent
+    body.client_user_agent = typeof userAgent === 'string'
+      ? userAgent.substring(0, 255)
+      : body.client_user_agent
     checkout(body, respond, storeId)
   }
 }
