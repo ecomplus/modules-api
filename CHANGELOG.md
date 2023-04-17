@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.56](https://github.com/ecomplus/modules-api/compare/v0.12.55...v0.12.56) (2023-04-17)
+
+
+### Features
+
+* **checkout:** accept `referral` on customer object ([97f3dcc](https://github.com/ecomplus/modules-api/commit/97f3dcc177fa9283182561920d87162af4631b1c))
+
 ### [0.12.55](https://github.com/ecomplus/modules-api/compare/v0.12.54...v0.12.55) (2023-02-14)
 
 
