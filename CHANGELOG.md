@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.58](https://github.com/ecomplus/modules-api/compare/v0.12.57...v0.12.58) (2023-06-01)
+
+
+### Features
+
+* **apply-discount:** add new optional `customer.doc_number` field ([d67d89a](https://github.com/ecomplus/modules-api/commit/d67d89a8ad1e11296e861c1f44b4864e6a1b7c1c))
+
 ### [0.12.57](https://github.com/ecomplus/modules-api/compare/v0.12.56...v0.12.57) (2023-05-12)
 
 
