@@ -100,6 +100,28 @@ const schema = {
               },
               'description': 'Category from cart item'
             }
+          },
+          'brands': {
+            'type': 'array',
+            'maxItems': 50,
+            'items': {
+              'type': 'object',
+              'additionalProperties': false,
+              'required': [ '_id' ],
+              'properties': {
+                '_id': {
+                  'type': 'string',
+                  'pattern': '^[a-f0-9]{24}$',
+                  'description': 'Brand ID'
+                },
+                'name': {
+                  'type': 'string',
+                  'maxLength': 255,
+                  'description': 'Brand name'
+                }
+              },
+              'description': 'Brands from cart item'
+            }
           }
         },
         'description': 'One of the cart items'

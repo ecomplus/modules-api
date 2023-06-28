@@ -103,6 +103,14 @@ const getValidResults = (results, checkProp) => {
   return validResults
 }
 
+// remove unused props
+const removeProps = (checkoutBody) => {
+  checkoutBody.items.forEach(item => {
+    delete item.categories
+    delete item.brands
+  })
+}
+
 module.exports = (checkoutBody, checkoutRespond, storeId) => {
   // valid body
   // handle checkout with shipping and transaction options
@@ -571,6 +579,8 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
               }
             }
           }
+
+          removeProps(orderBody)
 
           // proceed to list payments
           listPayments()
