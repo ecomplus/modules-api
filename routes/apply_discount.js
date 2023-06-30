@@ -121,8 +121,9 @@ const schema = {
                   'description': 'Brand name'
                 }
               },
-              'description': 'Brands from cart item'
-            }
+              'description': 'Product brand (manufacturer) partial object'
+            },
+            'description': 'List of product brands'
           }
         },
         'description': 'One of the cart items'
