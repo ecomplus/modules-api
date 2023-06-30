@@ -159,7 +159,10 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
       items.forEach(item => {
         subtotal += (item.final_price * item.quantity)
         // pass each item to prevent object overwrite
-        orderBody.items.push(Object.assign({}, item))
+        const orderItem = Object.assign({}, item)
+        delete orderItem.categories
+        delete orderItem.brands
+        orderBody.items.push(orderItem)
       })
       if (subtotal <= 0 && items.length < countCheckoutItems) {
         return respondInvalidItems()
