@@ -103,14 +103,6 @@ const getValidResults = (results, checkProp) => {
   return validResults
 }
 
-// remove unused props
-const removeProps = (checkoutBody) => {
-  checkoutBody.items.forEach(item => {
-    delete item.categories
-    delete item.brands
-  })
-}
-
 module.exports = (checkoutBody, checkoutRespond, storeId) => {
   // valid body
   // handle checkout with shipping and transaction options
@@ -167,7 +159,10 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
       items.forEach(item => {
         subtotal += (item.final_price * item.quantity)
         // pass each item to prevent object overwrite
-        orderBody.items.push(Object.assign({}, item))
+        const orderItem = Object.assign({}, item)
+        delete orderItem.categories
+        delete orderItem.brands
+        orderBody.items.push(orderItem)
       })
       if (subtotal <= 0 && items.length < countCheckoutItems) {
         return respondInvalidItems()
@@ -579,8 +574,6 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
               }
             }
           }
-
-          removeProps(orderBody)
 
           // proceed to list payments
           listPayments()
