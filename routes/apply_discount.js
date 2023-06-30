@@ -98,8 +98,9 @@ const schema = {
                   'description': 'Category name'
                 }
               },
-              'description': 'Category from cart item'
-            }
+              'description': 'Partial category object'
+            },
+            'description': 'List of product categories'
           },
           'brands': {
             'type': 'array',
