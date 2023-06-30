@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.60](https://github.com/ecomplus/modules-api/compare/v0.12.59...v0.12.60) (2023-06-30)
+
+
+### Features
+
+* **apply-discount:** add optional fields brands/categories to items param ([#23](https://github.com/ecomplus/modules-api/issues/23)) ([ff9b561](https://github.com/ecomplus/modules-api/commit/ff9b561d8297c6e8905c39b5146096e24fc748df))
+
 ### [0.12.59](https://github.com/ecomplus/modules-api/compare/v0.12.58...v0.12.59) (2023-06-30)
 
 ### [0.12.58](https://github.com/ecomplus/modules-api/compare/v0.12.57...v0.12.58) (2023-06-01)
