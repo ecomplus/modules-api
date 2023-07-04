@@ -170,7 +170,9 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
       const amount = {
         subtotal,
         discount: 0,
-        freight: 0
+        freight: 0,
+        extra: 0,
+        tax: 0
       }
 
       const fixAmount = () => {
@@ -179,12 +181,6 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
             amount[field] = Math.round(amount[field] * 100) / 100
           }
         }
-
-        ['extra', 'tax'].forEach(field => {
-          if (!amount[field]) {
-            amount[field] = 0
-          }
-        })
 
         amount.total = Math.round((amount.subtotal + amount.freight + amount.extra + amount.tax - amount.discount) * 100) / 100
         if (amount.total < 0) {
