@@ -167,23 +167,10 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
       if (subtotal <= 0 && items.length < countCheckoutItems) {
         return respondInvalidItems()
       }
-
-      const transactions = Array.isArray(checkoutBody.transaction)
-        ? checkoutBody.transaction
-        : [checkoutBody.transaction]
-
-      let extra = 0
-      transactions.forEach(transaction => {
-        if (transaction.amount && checkoutBody.amount && checkoutBody.amount.total && (transaction.amount > checkoutBody.amount.total)) {
-          extra += transaction.amount - checkoutBody.amount.total
-        }
-      })
-
       const amount = {
-        extra,
         subtotal,
         discount: 0,
-        freight: 0,
+        freight: 0
       }
 
       const fixAmount = () => {
@@ -192,8 +179,7 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
             amount[field] = Math.round(amount[field] * 100) / 100
           }
         }
-
-        amount.total = Math.round((amount.subtotal + amount.freight + amount.extra - amount.discount) * 100) / 100
+        amount.total = Math.round((amount.subtotal + amount.freight - amount.discount) * 100) / 100
         if (amount.total < 0) {
           amount.total = 0
         }
@@ -207,7 +193,9 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
       const createOrder = () => {
         // start creating new order to API
         getCustomerId(customer, storeId, customerId => {
-          
+          const transactions = Array.isArray(checkoutBody.transaction)
+            ? checkoutBody.transaction
+            : [checkoutBody.transaction]
           // add customer ID to order and transaction
           customer._id = customerId
           transactions.forEach(({ buyer }) => {
@@ -314,6 +302,7 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
               simulateRequest(transactionBody, checkoutRespond, 'transaction', storeId, results => {
                 const isFirstTransaction = index === 0
                 let isDone
+                let extra = 0
                 // logger.log(results)
                 const validResults = getValidResults(results, 'transaction')
                 for (let i = 0; i < validResults.length; i++) {
@@ -334,6 +323,11 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
                         transaction[field] = transactionBody[field]
                       }
                     })
+
+                    if (transaction.amount && (transaction.amount > amount.total)) {
+                      extra += transaction.amount - amount.total
+                      amount.extra = extra
+                    }
 
                     // setup transaction app object
                     if (!transaction.app) {
