@@ -194,6 +194,17 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
       const createOrder = () => {
         // start creating new order to API
         getCustomerId(customer, storeId, customerId => {
+          if (!customerId) {
+            // user is blocked
+            const usrMsg = {
+              en_us: 'Your account is blocked for new orders',
+              pt_br: 'Sua conta está bloqueada para novos pedidos'
+            }
+            const devMsg = 'Buyer is blocked'
+            checkoutRespond({}, null, 403, 'CKT903', devMsg, usrMsg)
+            return
+          }
+
           const transactions = Array.isArray(checkoutBody.transaction)
             ? checkoutBody.transaction
             : [checkoutBody.transaction]
