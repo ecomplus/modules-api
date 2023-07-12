@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.61](https://github.com/ecomplus/modules-api/compare/v0.12.60...v0.12.61) (2023-07-12)
+
+
+### Bug Fixes
+
+* **checkout:** blocking new orders by buyer doc number ([deea7ec](https://github.com/ecomplus/modules-api/commit/deea7ec1e042431655eda80df257a8a2dd550c5b))
+* **checkout:** set amount extra if transaction amount is greater than total ([#24](https://github.com/ecomplus/modules-api/issues/24)) ([a3f2445](https://github.com/ecomplus/modules-api/commit/a3f2445f4653d304b7b5520d7bb3e2fc33316fa8))
+
 ### [0.12.60](https://github.com/ecomplus/modules-api/compare/v0.12.59...v0.12.60) (2023-06-30)
 
 
