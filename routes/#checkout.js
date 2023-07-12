@@ -170,7 +170,8 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
       const amount = {
         subtotal,
         discount: 0,
-        freight: 0
+        freight: 0,
+        extra: 0
       }
 
       const fixAmount = () => {
@@ -179,7 +180,7 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
             amount[field] = Math.round(amount[field] * 100) / 100
           }
         }
-        amount.total = Math.round((amount.subtotal + amount.freight - amount.discount) * 100) / 100
+        amount.total = Math.round((amount.subtotal + amount.freight + amount.extra - amount.discount) * 100) / 100
         if (amount.total < 0) {
           amount.total = 0
         }
@@ -322,6 +323,11 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
                         transaction[field] = transactionBody[field]
                       }
                     })
+
+                    if (transaction.amount > amount.total) {
+                      amount.extra += (transaction.amount - amount.total)
+                      fixAmount()
+                    }
 
                     // setup transaction app object
                     if (!transaction.app) {
