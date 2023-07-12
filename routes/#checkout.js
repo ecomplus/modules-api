@@ -324,7 +324,7 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
                       }
                     })
 
-                    if (transaction.amount && (transaction.amount > amount.total)) {
+                    if (transaction.amount > amount.total) {
                       amount.extra += (transaction.amount - amount.total)
                       fixAmount()
                     }
