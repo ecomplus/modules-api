@@ -335,11 +335,6 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
                       }
                     })
 
-                    if (transaction.amount > amount.total) {
-                      amount.extra += (transaction.amount - amount.total)
-                      fixAmount()
-                    }
-
                     // setup transaction app object
                     if (!transaction.app) {
                       transaction.app = { _id: result._id }
@@ -430,6 +425,17 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
                   if (countDone === transactions.length) {
                     if (amount.total / paymentsAmount > 1.01) {
                       cancelOrder('Transaction amounts doesn\'t match (is lower) order total value')
+                    } else {
+                      amount.extra = (paymentsAmount - amount.total)
+                      if (amount.extra > 0) {
+                        fixAmount()
+                        setTimeout(() => {
+                          const body = {
+                            amount
+                          }
+                          Api('orders/' + orderId + '.json', 'PATCH', body, storeId)
+                        }, 400)
+                      }
                     }
                   }
                   return
