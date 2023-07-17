@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.62](https://github.com/ecomplus/modules-api/compare/v0.12.61...v0.12.62) (2023-07-17)
+
+
+### Bug Fixes
+
+* **checkout:** properly update order amount if extra value is added ([#26](https://github.com/ecomplus/modules-api/issues/26)) ([02dfa63](https://github.com/ecomplus/modules-api/commit/02dfa63d5f4ac7a161cb61b24470964987ea9b38))
+
 ### [0.12.61](https://github.com/ecomplus/modules-api/compare/v0.12.60...v0.12.61) (2023-07-12)
 
 
