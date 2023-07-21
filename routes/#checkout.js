@@ -426,7 +426,7 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
                     if (amount.total / paymentsAmount > 1.01) {
                       cancelOrder('Transaction amounts doesn\'t match (is lower) order total value')
                     } else {
-                      amount.extra = (paymentsAmount - amount.total)
+                      amount.extra = Math.min(paymentsAmount - amount.total, 0)
                       if (amount.extra > 0) {
                         fixAmount()
                         setTimeout(() => {
