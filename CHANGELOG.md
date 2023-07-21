@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.63](https://github.com/ecomplus/modules-api/compare/v0.12.62...v0.12.63) (2023-07-21)
+
+
+### Bug Fixes
+
+* retry api requests on rate limit or persistent connection errors ([c978555](https://github.com/ecomplus/modules-api/commit/c978555cf2c59db36f9d811be7be3f5e45b5a4ef))
+
 ### [0.12.62](https://github.com/ecomplus/modules-api/compare/v0.12.61...v0.12.62) (2023-07-17)
 
 
