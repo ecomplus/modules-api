@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.64](https://github.com/ecomplus/modules-api/compare/v0.12.63...v0.12.64) (2023-07-21)
+
+
+### Bug Fixes
+
+* **checkout:** ensure `amount.extra` is never less than 0 ([5e16f6b](https://github.com/ecomplus/modules-api/commit/5e16f6ba5cfbf8b4a5cb971770374254ae92454c))
+
 ### [0.12.63](https://github.com/ecomplus/modules-api/compare/v0.12.62...v0.12.63) (2023-07-21)
 
 
