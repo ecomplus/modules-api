@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.66](https://github.com/ecomplus/modules-api/compare/v0.12.65...v0.12.66) (2023-09-06)
+
+
+### Bug Fixes
+
+* **checkout:** better handling multiple results (apps) for apply discounts ([33e96e3](https://github.com/ecomplus/modules-api/commit/33e96e3d0f7320839ab8f1ce02c490285062b1ba))
+
 ### [0.12.65](https://github.com/ecomplus/modules-api/compare/v0.12.64...v0.12.65) (2023-07-22)
 
 
