@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.67](https://github.com/ecomplus/modules-api/compare/v0.12.66...v0.12.67) (2023-09-06)
+
+
+### Features
+
+* **checkout:** accepting undefined discount app id for multiple discount apps ([e9b20b5](https://github.com/ecomplus/modules-api/commit/e9b20b5db0f4fdf9367e682004226d05109d987f))
+
 ### [0.12.66](https://github.com/ecomplus/modules-api/compare/v0.12.65...v0.12.66) (2023-09-06)
 
 
