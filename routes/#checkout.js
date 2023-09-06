@@ -43,7 +43,7 @@ const simulateRequest = (checkoutBody, checkoutRespond, label, storeId, callback
       moduleBody = checkoutBody.transaction
   }
 
-  if (moduleBody && moduleBody.app_id) {
+  if (moduleBody) {
     // mask request objects
     const reqId = null
     const reqMeta = {

@@ -777,7 +777,6 @@ const schema = {
     },
     'discount': {
       'type': 'object',
-      'required': [ 'app_id' ],
       'additionalProperties': false,
       'properties': {
         'app_id': {
