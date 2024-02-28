@@ -73,6 +73,17 @@ const schema = {
             'minimum': 0,
             'maximum': 999999999,
             'description': 'Final item price including additions due to customizations and gift wrap'
+          },
+          'flags': {
+            'type': 'array',
+            'uniqueItems': true,
+            'maxItems': 10,
+            'items': {
+              'type': 'string',
+              'maxLength': 20,
+              'description': 'Flag title'
+            },
+            'description': 'Flags to associate additional info'
           }
         },
         'description': 'One of the cart items'
