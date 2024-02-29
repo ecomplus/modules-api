@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.68](https://github.com/ecomplus/modules-api/compare/v0.12.67...v0.12.68) (2024-02-29)
+
+
+### Features
+
+* **create-transactions:** add `flags` to items schema ([#28](https://github.com/ecomplus/modules-api/issues/28)) ([2c47419](https://github.com/ecomplus/modules-api/commit/2c47419e529b4efc63f5ad3e38a4c506df05ac61))
+
 ### [0.12.67](https://github.com/ecomplus/modules-api/compare/v0.12.66...v0.12.67) (2023-09-06)
 
 
