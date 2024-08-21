@@ -538,8 +538,8 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
                 ]
                 orderBody.shipping_method_label = shippingService.label || ''
 
-                // continue to discount step
-                applyDiscount()
+                // continue to payment preview -> discount step
+                listPayments({ isPaymentPreview: true })
                 return
               }
             }
@@ -559,6 +559,9 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
         // simulate request to apply discount endpoint to get extra discount value
         simulateRequest(checkoutBody, checkoutRespond, 'discount', storeId, results => {
           const validResults = getValidResults(results)
+          // reset payment preview discount if any
+          amount.discount = 0
+          fixAmount()
           for (let i = 0; i < validResults.length; i++) {
             const result = validResults[i]
             // treat apply discount response
@@ -616,7 +619,7 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
         })
       }
 
-      const listPayments = () => {
+      const listPayments = ({ isPaymentPreview } = {}) => {
         // simulate requets to list payments endpoint
         const paymentsBody = Object.assign({}, checkoutBody)
         if (Array.isArray(paymentsBody.transaction)) {
@@ -675,8 +678,13 @@ module.exports = (checkoutBody, checkoutRespond, storeId) => {
                 // add to order body
                 orderBody.payment_method_label = paymentGateway.label || ''
 
-                // finally start creating new order
-                createOrder()
+                if (isPaymentPreview) {
+                  // continue to discount step
+                  applyDiscount()
+                } else {
+                  // finally start creating new order
+                  createOrder()
+                }
                 return
               }
             }
