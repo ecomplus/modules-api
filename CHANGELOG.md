@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.69](https://github.com/ecomplus/modules-api/compare/v0.12.68...v0.12.69) (2024-08-21)
+
+
+### Bug Fixes
+
+* run list payments (preview) twice, once before apply discount ([cec46b2](https://github.com/ecomplus/modules-api/commit/cec46b27983a05dfff6470d488a25056818c34a1))
+
 ### [0.12.68](https://github.com/ecomplus/modules-api/compare/v0.12.67...v0.12.68) (2024-02-29)
 
 
