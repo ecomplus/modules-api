@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.12.70](https://github.com/ecomplus/modules-api/compare/v0.12.69...v0.12.70) (2025-01-25)
+
+
+### Features
+
+* **checkout:** accept `group` field on customer object ([f73a520](https://github.com/ecomplus/modules-api/commit/f73a520d7fdc49aac6a4c78446c96a0da798b408))
+
 ### [0.12.69](https://github.com/ecomplus/modules-api/compare/v0.12.68...v0.12.69) (2024-08-21)
 
 
