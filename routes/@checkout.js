@@ -1042,6 +1042,12 @@ const schema = {
           'type': 'string',
           'pattern': '^[a-f0-9]{24}$',
           'description': 'ID of customer who invited the new customer, if he was invited by another account'
+        },
+        'group': {
+          'type': 'string',
+          'minLength': 2,
+          'maxLength': 100,
+          'description': 'Customer group indentifier'
         }
       },
       'description': 'Customer object'
